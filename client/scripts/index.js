@@ -2,6 +2,7 @@ const imgs = document.querySelectorAll('.image');
 const imgsArray = Array.from(imgs);
 const prev = document.querySelectorAll('.left-btn');
 const next = document.querySelectorAll('.right-btn');
+let carouselNav = document.querySelector('#carousel-nav');
 
 prev.forEach(btn => {
   btn.addEventListener('click', e => {
@@ -9,11 +10,18 @@ prev.forEach(btn => {
       let currentImg = document.querySelector(`.image:not(.hide)`);
       let currentImgIndex = imgsArray.indexOf(currentImg);
 
+      let carouselBtn = document.querySelectorAll('.nav-btn');
+
       currentImg.classList.toggle('hide');
+      carouselBtn.forEach(btn => {
+          btn.style.filter = 'brightness(100%)';
+      });
       if (currentImgIndex === 0) {
         imgs[imgs.length - 1].classList.toggle('hide');
+          carouselBtn[imgs.length - 1].style.filter = 'brightness(150%)';
       } else {
           imgs[currentImgIndex - 1].classList.toggle('hide');
+          carouselBtn[currentImgIndex - 1].style.filter = 'brightness(150%)';
       }
   });
 });
@@ -24,16 +32,21 @@ next.forEach(btn => {
       let currentImg = document.querySelector(`.image:not(.hide)`);
       let currentImgIndex = imgsArray.indexOf(currentImg);
 
+      let carouselBtn = document.querySelectorAll('.nav-btn');
+
       currentImg.classList.toggle('hide');
+      carouselBtn.forEach(btn => {
+          btn.style.filter = 'brightness(100%)';
+      });
       if (currentImgIndex === imgs.length - 1) {
-        imgs[0].classList.toggle('hide');
+          imgs[0].classList.toggle('hide');
+          carouselBtn[0].style.filter = 'brightness(150%)';
       } else {
           imgs[currentImgIndex + 1].classList.toggle('hide');
+          carouselBtn[currentImgIndex + 1].style.filter = 'brightness(150%)';
       }
   });
 });
-
-let carouselNav = document.querySelector('#carousel-nav');
 
 imgs.forEach(image => {
     let nav = document.createElement('div');
@@ -43,7 +56,7 @@ imgs.forEach(image => {
     let carouselBtn = document.querySelectorAll('.nav-btn');
     let carouselBtnArray = Array.from(carouselBtn);
 
-    carouselBtnArray[0].style.filter = 'brightness(140%)';
+    carouselBtnArray[0].style.filter = 'brightness(150%)';
 
     carouselBtn.forEach(btn => {
         btn.addEventListener('click', e => {
@@ -58,7 +71,7 @@ imgs.forEach(image => {
                 });
             });
             showImg.classList.toggle('hide');
-            current.style.filter = 'brightness(140%)';
+            current.style.filter = 'brightness(150%)';
         });
     });
 });

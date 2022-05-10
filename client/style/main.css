@@ -55,7 +55,7 @@ body {
 }
 
 .nav-btn:hover {
-    filter: brightness(130%);
+    filter: brightness(150%);
 }
 
 .image-title {
@@ -71,4 +71,5 @@ body {
     top: -5vh;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    text-shadow: 0.1vw 0vw 0.25vw #181817, 0.15vw 0vw 0.25vw #272726, 0.1vw 0vw 0.1vw #272726;
 }
