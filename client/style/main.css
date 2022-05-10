@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+
+body {
+    margin: 20vh 0 0 0;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    flex-direction: column;
+    background-image: url("../../backend/resources/background.png");
+}
+
+.left-btn, .right-btn {
+    cursor: pointer;
+}
+
+.left-btn img, .right-btn img {
+    width: 9vh;
+}
+
+.carousel {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image img{
+    width: 97vh;
+}
+
+.hide {
+    display: none;
+}
+
+#carousel-nav {
+    display: flex;
+    position: relative;
+    top: 20vh;
+}
+
+.nav-btn {
+    border-radius: 1vh;
+    cursor: pointer;
+    margin: 0 1vh;
+    background: linear-gradient(135deg, rgb(117, 117, 117) 0%, rgb(66, 66, 66) 0.01%, rgb(208, 208, 208) 100%);
+    width: 3vh;
+    height: 2vh;
+}
+
+.nav-btn:hover {
+    filter: brightness(130%);
+}
+
+.image-title {
+    color: #ededed;
+    font-size: 190%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 9vh;
+    background: no-repeat url(../../backend/resources/banner.png);
+    position: relative;
+    top: -5vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
