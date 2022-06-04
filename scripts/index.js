@@ -15,13 +15,16 @@ prev.forEach(btn => {
       currentImg.classList.toggle('hide');
       carouselBtn.forEach(btn => {
           btn.style.filter = 'brightness(100%)';
+          btn.classList.remove('border');
       });
       if (currentImgIndex === 0) {
         imgs[imgs.length - 1].classList.toggle('hide');
           carouselBtn[imgs.length - 1].style.filter = 'brightness(150%)';
+          carouselBtn[imgs.length - 1].classList.add('border');
       } else {
           imgs[currentImgIndex - 1].classList.toggle('hide');
           carouselBtn[currentImgIndex - 1].style.filter = 'brightness(150%)';
+          carouselBtn[currentImgIndex - 1].classList.add('border');
       }
   });
 });
@@ -37,13 +40,16 @@ next.forEach(btn => {
       currentImg.classList.toggle('hide');
       carouselBtn.forEach(btn => {
           btn.style.filter = 'brightness(100%)';
+          btn.classList.remove('border');
       });
       if (currentImgIndex === imgs.length - 1) {
           imgs[0].classList.toggle('hide');
           carouselBtn[0].style.filter = 'brightness(150%)';
+          carouselBtn[0].classList.add('border');
       } else {
           imgs[currentImgIndex + 1].classList.toggle('hide');
           carouselBtn[currentImgIndex + 1].style.filter = 'brightness(150%)';
+          carouselBtn[currentImgIndex + 1].classList.add('border');
       }
   });
 });
@@ -57,6 +63,7 @@ imgs.forEach(image => {
     let carouselBtnArray = Array.from(carouselBtn);
 
     carouselBtnArray[0].style.filter = 'brightness(150%)';
+    carouselBtnArray[0].classList.add('border');
 
     carouselBtn.forEach(btn => {
         btn.addEventListener('click', e => {
@@ -68,10 +75,12 @@ imgs.forEach(image => {
                 img.classList.add('hide');
                 carouselBtn.forEach(btn => {
                     btn.style.filter = 'brightness(100%)';
+                    btn.classList.remove('border');
                 });
             });
             showImg.classList.toggle('hide');
             current.style.filter = 'brightness(150%)';
+            current.classList.add('border');
         });
     });
 });
